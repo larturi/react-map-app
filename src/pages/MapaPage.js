@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useMapbox } from '../hooks/useMapbox';
 
@@ -16,7 +16,21 @@ export const MapaPage = () => {
         puntoInicial.zoom = Number(localStorage.getItem('zoom'));
     }
 
-    const { coords, setRef } = useMapbox( puntoInicial );
+    const { coords, setRef, nuevoMarcador$, movimientoMarcador$ } = useMapbox( puntoInicial );
+
+    // Nuevo marcador
+    useEffect(() => {
+        nuevoMarcador$.subscribe( marcador => {
+            console.log(marcador);
+        })
+    }, [nuevoMarcador$]);
+
+    // Movimiento marcador
+    useEffect(() => {
+        movimientoMarcador$.subscribe( marcador => {
+            console.log(marcador);
+        })
+    }, [movimientoMarcador$]);
 
     return (
         <>
