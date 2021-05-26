@@ -64,15 +64,16 @@ export const useMapbox = (puntoInicial) => {
         marcadores.current[id].setLngLat([lng, lat]);
     }, []);
 
-    useEffect(() => {
+    useEffect(() => {     
         const map = new mapboxgl.Map({
             container: mapaDiv.current,
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [ puntoInicial.lng, puntoInicial.lat ],
             zoom: puntoInicial.zoom
         });
-
+    
         mapa.current = map;
+        
     }, [puntoInicial]);
 
     // Cuando se mueve el mapa
