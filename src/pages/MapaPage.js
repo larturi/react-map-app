@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { SocketContext } from '../context/SocketContext';
+import React from 'react';
 
 import { useSocketMapbox } from '../hooks/useSocketMapbox';
 
@@ -11,14 +10,10 @@ const puntoInicial = {
 
 export const MapaPage = () => {
 
-    const { socket } = useContext(SocketContext);
-
-
-    const { coords, setRef } = useSocketMapbox(socket, puntoInicial);
+    const { coords, setRef } = useSocketMapbox(puntoInicial);
 
     return (
         <>
-
             <div className="info">
                 Lng: { coords.lng } | Lat: { coords.lat } | Zoom: { coords.zoom }
             </div>

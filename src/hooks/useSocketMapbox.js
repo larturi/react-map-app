@@ -1,8 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 
+import { SocketContext } from '../context/SocketContext';
 import { useMapbox } from '../hooks/useMapbox';
 
-export const useSocketMapbox = ( socket, puntoInicial ) => {
+export const useSocketMapbox = (puntoInicial ) => {
+
+    const { socket } = useContext(SocketContext);
 
     const { 
         coords, 
