@@ -1,6 +1,6 @@
-# Turnero App (Client)
+# Mapbox React App
 
-### Ticketera básica con React & Node
+### PoC de [Mapbox API](https://www.mapbox.com/) con React & Sockets.io
 
 ## 🚀 Quick start
 
